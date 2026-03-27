@@ -324,3 +324,9 @@ docker-compose up -d
 
 ## 13. Footer
 copyright @ Information system development and preparation work, Nakhon Sawan Municipality.by Manarider
+
+## 14. Correction Notes
+- หากใช้ Vite ปกติ output จะอยู่ที่ `frontend/dist/` ไม่ใช่ `frontend/dist/phatsadu/`
+- หาก deploy ภายใต้ subpath `/phatsadu/` ควรกำหนด base path ของ frontend ให้ตรง
+- ควรทดสอบ `try_files` และ path static files กับ build จริงก่อนใช้งาน production
+

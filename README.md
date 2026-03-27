@@ -1,5 +1,16 @@
-<<<<<<< HEAD
 # PAPP - ระบบบริหารจัดการพัสดุ เทศบาลนครนครสวรรค์
+
+ระบบบริหารจัดการพัสดุสำหรับ:
+- ครุภัณฑ์
+- วัสดุ
+- งานแจ้งซ่อม
+- งานซ่อมบำรุง
+- สต๊อกและเบิกจ่ายวัสดุ
+
+> สถานะปัจจุบันของ repository นี้: **Documentation First**
+>
+> ขณะนี้ repo นี้เก็บเอกสารออกแบบระบบและฐานข้อมูลเบื้องต้น  
+> ส่วนโครงสร้าง `backend/` และ `frontend/` จะถูก scaffold ในขั้นตอนถัดไป
 
 ## 📋 เอกสารอ้างอิง
 
@@ -8,92 +19,35 @@
 - **PAPP-REQUIREMENTS.md** - ความต้องการระบบ
 - **PAPP-DATABASE-DESIGN.md** - ออกแบบฐานข้อมูล
 - **PAPP-WORKFLOW-SECURITY.md** - Workflow และ Security
-- **PAPP-API-DESIGN.md** - API Endpoints
+- **PAPP-API-DESIGN.md** - API Design
 - **PAPP-SCREEN-LIST.md** - รายการหน้าจอ
 
 ### Development Documents
-- **PAPP-DEVELOPMENT-PLAN.md** - แผนพัฒนา 4 Phases
-- **PAPP-NGINX-DEPLOYMENT.md** - การ Deploy Nginx
-- **PAPP-DB-SEED-DATA.sql** - Initial Database Schema & Seed
+- **PAPP-DEVELOPMENT-PLAN.md** - แผนพัฒนา
+- **PAPP-NGINX-DEPLOYMENT.md** - แนวทาง deploy ด้วย Nginx
+- **PAPP-DB-SEED-DATA.sql** - Seed/Master data เบื้องต้น
 
-## 🚀 Quick Start
+## 🚀 Repository Status
 
-### Prerequisites
-- Node.js 18+
-- PostgreSQL 14+
-- Docker & Docker Compose (optional)
-- Nginx (for deployment)
+ไฟล์ที่มีแล้วใน repo:
+- เอกสาร requirements / database / workflow / API / screens
+- แผนพัฒนา
+- แนวทาง Nginx deployment
+- SQL seed data เบื้องต้น
 
-### Local Development
-
-1. Clone repository
-```bash
-git clone <repo-url>
-cd papp
-```
-
-2. Setup Backend
-```bash
-cd backend
-npm install
-cp .env.example .env
-npm run migrate
-npm run seed
-npm run dev
-```
-
-3. Setup Frontend
-```bash
-cd frontend
-npm install
-cp .env.example .env
-npm run dev
-```
-
-4. Access Application
-- Frontend: `http://localhost:5173/phatsadu/`
-- Backend API: `http://localhost:3033/phatsadu/api`
-
-### Using Docker
-```bash
-docker-compose up -d
-```
-
-Access: `http://localhost/phatsadu/`
-
-## 📦 Project Structure
-
-```
-papp/
-├── backend/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── db/
-│   │   ├── middleware/
-│   │   ├── services/
-│   │   └── utils/
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── utils/
-│   └── package.json
-├── docs/ (or documents folder)
-│   ├── PAPP-*.md
-│   └── PAPP-DB-SEED-DATA.sql
-└── docker-compose.yml
-```
+ไฟล์ที่ยังไม่ได้ scaffold:
+- `backend/`
+- `frontend/`
+- `docker-compose.yml`
+- `.env.example`
+- source code runtime จริง
 
 ## 🔐 Authentication
-
-- Login via UMS: `http://192.168.100.151/ums/`
-- Role mapping: admin, manager, staff, viewer
-- No password storage in PAPP
+- Login ผ่าน UMS: `http://192.168.100.151/ums/`
+- ใช้ role mapping: `admin`, `manager`, `staff`, `viewer`
+- ระบบไม่เก็บรหัสผ่านผู้ใช้ใน PAPP
 
 ## 📊 Modules
-
 1. **ครุภัณฑ์** - Equipment Management
 2. **แจ้งซ่อม** - Maintenance Tracking
 3. **วัสดุ** - Materials Management
@@ -103,26 +57,35 @@ papp/
 
 ## 🔗 Important URLs
 
-### Development
-- Backend: `http://localhost:3033`
-- Frontend: `http://localhost:5173`
-
 ### Production
-- App FQDN: `http://app.nsm.go.th/phatsadu/`
-- App IP: `http://192.168.100.152/phatsadu/`
+- FQDN: `http://app.nsm.go.th/phatsadu/`
+- IP URL: `http://192.168.100.152/phatsadu/`
 
-## 📞 Support
+### UMS
+- `http://192.168.100.151/ums/`
 
-Contact: Information System Development Team
+## 🗃️ Database
+- Database: PostgreSQL
+- Current SQL file: `PAPP-DB-SEED-DATA.sql`
+- หมายเหตุ: ไฟล์นี้เป็น **seed/master data เบื้องต้น** ยังไม่ใช่ full migration set ของระบบทั้งหมด
+
+ตัวอย่างการรัน:
+```bash
+psql -U phatsadu -d phatsadu -f PAPP-DB-SEED-DATA.sql
+```
+
+## 🧪 Suggested Next Steps
+- ตรวจความสอดคล้องของเอกสารทั้งหมด
+- สรุป canonical enum และ business rules
+- Scaffold backend Node.js project
+- Scaffold frontend React project
+- เพิ่ม `.env.example`
+- เพิ่ม Docker Compose
+- เริ่ม Phase 1 implementation
 
 ## 📄 License
-
 Copyright @ Information system development and preparation work, Nakhon Sawan Municipality.by Manarider
 
 ---
 
 Last Updated: 2026-03-27
-=======
-# phatsadu
-phatsaduapp
->>>>>>> 8c73d1d46c2aee85b86274d78830105d152e74eb
