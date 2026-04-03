@@ -1,0 +1,48 @@
+# ─── Dependencies ──────────────────────────────────
+node_modules/
+*/node_modules/
+
+# ─── Environment Variables ─────────────────────────
+.env
+backend/.env
+frontend/.env
+*.env.local
+*.env.*.local
+
+# ─── Build Outputs ─────────────────────────────────
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# ─── Uploaded Files (ไม่ commit ไฟล์ที่ upload) ───
+backend/uploads/equipment/**
+backend/uploads/chats/**
+backend/uploads/repairs/**
+backend/uploads/sale/**
+!backend/uploads/equipment/.gitkeep
+!backend/uploads/chats/.gitkeep
+!backend/uploads/repairs/.gitkeep
+!backend/uploads/sale/.gitkeep
+
+# ─── System Directories ────────────────────────────
+lost+found/
+
+# ─── Logs ──────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ─── OS / IDE ──────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

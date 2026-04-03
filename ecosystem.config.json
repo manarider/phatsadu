@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "papp-backend",
+      "script": "server.js",
+      "cwd": "/data/phatsadu/backend",
+      "instances": 1,
+      "exec_mode": "fork",
+      "watch": false,
+      "autorestart": true,
+      "restart_delay": 4000,
+      "max_restarts": 10,
+      "min_uptime": "10s",
+      "kill_timeout": 8000,
+      "wait_ready": true,
+      "listen_timeout": 10000,
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "4004"
+      },
+      "env_development": {
+        "NODE_ENV": "development",
+        "PORT": "4004"
+      },
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "out_file": "/data/phatsadu/logs/papp-backend-out.log",
+      "error_file": "/data/phatsadu/logs/papp-backend-error.log",
+      "merge_logs": true,
+      "log_type": "json"
+    }
+  ]
+}

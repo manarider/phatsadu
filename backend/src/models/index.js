@@ -1,0 +1,16 @@
+module.exports = {
+  Counter: require('./counter.model'),
+  Department: require('./department.model'),
+  EquipmentType: require('./equipmentType.model'),
+  MaterialType: require('./materialType.model'),
+  UserCache: require('./userCache.model'),
+  Equipment: require('./equipment.model'),
+  Material: require('./material.model'),
+  MaterialTransaction: require('./materialTransaction.model'),
+  RepairRequest: require('./repairRequest.model'),
+  ChatMessage: require('./chatMessage.model'),
+  AuditLog: require('./auditLog.model'),
+  SystemSetting: require('./systemSetting.model'),
+  MaintenanceRecord: require('./maintenanceRecord.model'),
+  SaleRecord: require('./saleRecord.model'),
+}

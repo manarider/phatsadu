@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Sarabun', sans-serif;
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  :root {
+    --color-equipment-primary: #2563eb;
+    --color-equipment-light: #dbeafe;
+    --color-material-primary: #16a34a;
+    --color-material-light: #dcfce7;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar ที่สวยงาม */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #f1f5f9;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 3px;
+  }
+}
